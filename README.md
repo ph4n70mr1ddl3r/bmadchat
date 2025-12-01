@@ -14,6 +14,8 @@ npm test
 ```
 # bmaderp
 
+![Node CI](https://github.com/ph4n70mr1ddl3r/bmaderp/actions/workflows/node-ci.yml/badge.svg)
+
 A small scaffold for the `bmaderp` project that includes basic contributor
 guidance and a Node CI workflow. Use this as a starting point — replace and
 extend files to match your project's language and requirements.

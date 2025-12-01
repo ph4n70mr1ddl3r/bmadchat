@@ -7,7 +7,10 @@ updates:
     open-pull-requests-limit: 5
     commit-message:
       prefix: "chore(deps)"
-    # Allow automerging for patch/minor updates if you want (disabled here).
-    # automerged_updates:
-    #   enable: true
-    #   merge_type: "squash"
+    # Automatically merge safe (non-major) updates when CI passes.
+    automerged_updates:
+      enable: true
+      merge_type: "squash"
+      # Automerge only patch and minor updates (avoid automerging major bumps).
+      # Dependabot will only automerge when checks pass and there are no conflicts.
+      # Note: GitHub will enforce branch protections / required checks before merging.
