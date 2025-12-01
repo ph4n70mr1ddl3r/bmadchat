@@ -1,0 +1,14 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Visual Studio Code
+.vscode/
+
+# Mac
+.DS_Store
