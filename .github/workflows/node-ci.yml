@@ -57,6 +57,24 @@ jobs:
             npm install
           fi
 
+      - name: Lint
+        if: steps.check_pkg.outputs.found == 'true'
+        run: |
+          if npm run | grep -q " lint"; then
+            npm run lint
+          else
+            echo "No npm lint script defined — skipping lint step."
+          fi
+
+      - name: Build
+        if: steps.check_pkg.outputs.found == 'true'
+        run: |
+          if npm run | grep -q " build"; then
+            npm run build
+          else
+            echo "No npm build script defined — skipping build step."
+          fi
+
       - name: Run tests
         if: steps.check_pkg.outputs.found == 'true'
         run: |
@@ -66,6 +84,9 @@ jobs:
             echo "No npm test script defined — consider adding one to package.json" && exit 0
           fi
 
-      - name: Upload test results (optional)
+      - name: Upload JUnit report
         if: steps.check_pkg.outputs.found == 'true'
-        run: echo "Add test result upload steps (e.g., JUnit) if desired."
+        uses: actions/upload-artifact@v4
+        with:
+          name: junit-report
+          path: coverage/junit/junit.xml
