@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'node',
@@ -23,7 +25,7 @@ module.exports = {
     [
       'jest-junit',
       {
-        outputDirectory: 'coverage/junit',
+        outputDirectory: path.join(__dirname, 'coverage', 'junit'),
         outputName: 'junit.xml'
       }
     ]

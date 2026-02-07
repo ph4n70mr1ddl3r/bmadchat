@@ -36,7 +36,6 @@ Adds two numbers together.
 ```typescript
 sum(5, 3); // 8
 sum(-1, 2); // 1
-sum(0.1, 0.2); // 0.30000000000000004
 ```
 
 ## Development
