@@ -41,4 +41,10 @@ describe('sum', () => {
         expect(sum(Number.MAX_SAFE_INTEGER, 0)).toBe(Number.MAX_SAFE_INTEGER);
         expect(sum(Number.MAX_SAFE_INTEGER, -1)).toBe(Number.MAX_SAFE_INTEGER - 1);
     });
+
+    test('precision loss beyond MAX_SAFE_INTEGER', () => {
+        const largeNum = Number.MAX_SAFE_INTEGER + 1;
+        expect(sum(largeNum, 0)).toBe(largeNum);
+        expect(sum(largeNum, 1)).toBe(largeNum);
+    });
 });
