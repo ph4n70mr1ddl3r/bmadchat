@@ -1,6 +1,7 @@
 {
     "name": "bmaderp",
     "version": "0.0.0",
+    "type": "module",
     "private": true,
     "scripts": {
         "clean": "rm -rf dist && rm -rf coverage",

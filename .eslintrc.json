@@ -16,6 +16,14 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
+  "overrides": [
+    {
+      "files": ["test/**/*.ts"],
+      "parserOptions": {
+        "project": "./tsconfig.test.json"
+      }
+    }
+  ],
   "plugins": ["@typescript-eslint"],
   "settings": {
     "import/resolver": {
