@@ -27,8 +27,8 @@ describe('sum', () => {
     });
 
     test('handles NaN input', () => {
-        expect(sum(NaN, 5)).toBeNaN();
-        expect(sum(5, NaN)).toBeNaN();
+        expect(() => sum(NaN, 5)).toThrow('Arguments cannot be NaN');
+        expect(() => sum(5, NaN)).toThrow('Arguments cannot be NaN');
     });
 
     test('handles Infinity', () => {
@@ -55,5 +55,24 @@ describe('sum', () => {
 
     test('adds very large negative numbers', () => {
         expect(sum(-1000000, -2000000)).toBe(-3000000);
+    });
+
+    test('handles negative zero', () => {
+        expect(sum(-0, 5)).toBe(5);
+        expect(sum(5, -0)).toBe(5);
+        expect(sum(-0, -0)).toBe(-0);
+    });
+
+    test('handles very small numbers', () => {
+        expect(sum(0.0000001, 0.0000001)).toBeCloseTo(0.0000002);
+        expect(sum(Number.MIN_VALUE, Number.MIN_VALUE)).toBe(Number.MIN_VALUE * 2);
+    });
+
+    test('throws error for non-number types', () => {
+        expect(() => sum('1' as any, 2)).toThrow('Both arguments must be numbers');
+        expect(() => sum(1, '2' as any)).toThrow('Both arguments must be numbers');
+        expect(() => sum(null as any, 2)).toThrow('Both arguments must be numbers');
+        expect(() => sum(undefined as any, 2)).toThrow('Both arguments must be numbers');
+        expect(() => sum({} as any, 2)).toThrow('Both arguments must be numbers');
     });
 });
