@@ -90,3 +90,16 @@ jobs:
         with:
           name: junit-report
           path: coverage/junit/junit.xml
+
+      - name: Coverage check
+        if: steps.check_pkg.outputs.found == 'true'
+        run: |
+          if [ -f coverage/coverage-summary.json ]; then
+            # Check for 100% coverage on statements
+            COVERAGE=$(grep -o '"pct":[0-9.]*' coverage/coverage-summary.json | head -1 | cut -d':' -f2)
+            if (( $(echo "$COVERAGE < 100" | bc -l) )); then
+              echo "Coverage is ${COVERAGE}%, required 100% - failing"
+              exit 1
+            fi
+            echo "Coverage check passed: ${COVERAGE}%"
+          fi

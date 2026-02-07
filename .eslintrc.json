@@ -16,6 +16,17 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
+  "overrides": [
+    {
+      "files": ["test/**/*.ts"],
+      "parserOptions": {
+        "project": "./tsconfig.test.json"
+      },
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ],
   "plugins": ["@typescript-eslint"],
   "settings": {
     "import/resolver": {
@@ -24,5 +35,22 @@
       }
     }
   },
-  "rules": {}
+  "rules": {
+    "no-console": ["error", { "allow": ["error"] }],
+    "prefer-const": "error",
+    "no-var": "error",
+    "eqeqeq": ["error", "always"],
+    "no-empty": "error",
+    "no-throw-literal": "error",
+    "no-unreachable": "error",
+    "no-useless-catch": "error",
+    "no-useless-return": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/no-misused-promises": "error",
+    "@typescript-eslint/no-unnecessary-type-assertion": "warn",
+    "import/order": ["error", { "groups": [["builtin", "external"], "internal", ["parent", "sibling"], "index"] }]
+  }
 }

@@ -1,14 +1,30 @@
+const path = require('path');
+
 module.exports = {
-  preset: 'ts-jest',
+  preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'node',
-  collectCoverage: true,
+  extensionsToTreatAsEsm: ['.ts'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+  },
+  transform: {
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        useESM: true,
+        diagnostics: {
+          ignoreCodes: [151002],
+        },
+      },
+    ],
+  },
   coverageDirectory: 'coverage',
   reporters: [
     'default',
     [
       'jest-junit',
       {
-        outputDirectory: 'coverage/junit',
+        outputDirectory: path.join(__dirname, 'coverage', 'junit'),
         outputName: 'junit.xml'
       }
     ]
