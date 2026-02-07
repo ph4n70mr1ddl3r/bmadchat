@@ -1,19 +1,5 @@
 # bmaderp
 
-Repository scaffolded with minimal workflow files.
-
-Getting started
-
-Configure CI
-
-Run tests locally
-
-Example
-```bash
-npm test
-```
-# bmaderp
-
 ![Node CI](https://github.com/ph4n70mr1ddl3r/bmaderp/actions/workflows/node-ci.yml/badge.svg)
 
 A small scaffold for the `bmaderp` project that includes basic contributor

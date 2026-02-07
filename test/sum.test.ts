@@ -25,4 +25,15 @@ describe('sum', () => {
     test('adds large numbers', () => {
         expect(sum(1000000, 2000000)).toBe(3000000);
     });
+
+    test('handles NaN input', () => {
+        expect(sum(NaN, 5)).toBeNaN();
+        expect(sum(5, NaN)).toBeNaN();
+    });
+
+    test('handles Infinity', () => {
+        expect(sum(Infinity, 5)).toBe(Infinity);
+        expect(sum(-Infinity, 5)).toBe(-Infinity);
+        expect(sum(Infinity, -Infinity)).toBeNaN();
+    });
 });
