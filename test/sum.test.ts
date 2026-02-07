@@ -36,4 +36,9 @@ describe('sum', () => {
         expect(sum(-Infinity, 5)).toBe(-Infinity);
         expect(sum(Infinity, -Infinity)).toBeNaN();
     });
+
+    test('handles MAX_SAFE_INTEGER', () => {
+        expect(sum(Number.MAX_SAFE_INTEGER, 1)).toBe(Number.MAX_SAFE_INTEGER + 1);
+        expect(sum(Number.MAX_SAFE_INTEGER, 0)).toBe(Number.MAX_SAFE_INTEGER);
+    });
 });
