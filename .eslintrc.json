@@ -33,7 +33,7 @@
     }
   },
   "rules": {
-    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-console": ["error", { "allow": ["error"] }],
     "prefer-const": "error",
     "no-var": "error",
     "eqeqeq": ["error", "always"],
