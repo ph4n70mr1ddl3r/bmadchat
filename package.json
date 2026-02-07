@@ -4,7 +4,7 @@
     "description": "A TypeScript library providing a simple sum function for adding two numbers together",
     "type": "module",
     "private": true,
-    "author": "",
+    "author": "ph4n70mr1ddl3r",
     "license": "MIT",
     "repository": {
         "type": "git",
