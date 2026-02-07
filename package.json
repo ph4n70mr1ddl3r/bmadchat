@@ -1,9 +1,8 @@
 {
     "name": "bmaderp",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "A TypeScript library providing a simple sum function for adding two numbers together",
     "type": "module",
-    "private": true,
     "author": "ph4n70mr1ddl3r",
     "license": "MIT",
     "repository": {

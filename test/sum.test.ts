@@ -27,8 +27,8 @@ describe('sum', () => {
     });
 
     test('handles NaN input', () => {
-        expect(() => sum(NaN, 5)).toThrow('Arguments cannot be NaN');
-        expect(() => sum(5, NaN)).toThrow('Arguments cannot be NaN');
+        expect(() => sum(NaN, 5)).toThrow('Both arguments must be valid numbers');
+        expect(() => sum(5, NaN)).toThrow('Both arguments must be valid numbers');
     });
 
     test('handles Infinity', () => {
@@ -69,10 +69,10 @@ describe('sum', () => {
     });
 
     test('throws error for non-number types', () => {
-        expect(() => sum('1' as any, 2)).toThrow('Both arguments must be numbers');
-        expect(() => sum(1, '2' as any)).toThrow('Both arguments must be numbers');
-        expect(() => sum(null as any, 2)).toThrow('Both arguments must be numbers');
-        expect(() => sum(undefined as any, 2)).toThrow('Both arguments must be numbers');
-        expect(() => sum({} as any, 2)).toThrow('Both arguments must be numbers');
+        expect(() => sum('1' as any, 2)).toThrow('Both arguments must be valid numbers');
+        expect(() => sum(1, '2' as any)).toThrow('Both arguments must be valid numbers');
+        expect(() => sum(null as any, 2)).toThrow('Both arguments must be valid numbers');
+        expect(() => sum(undefined as any, 2)).toThrow('Both arguments must be valid numbers');
+        expect(() => sum({} as any, 2)).toThrow('Both arguments must be valid numbers');
     });
 });

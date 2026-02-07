@@ -10,11 +10,8 @@
  * ```
  */
 export function sum(a: number, b: number): number {
-    if (typeof a !== 'number' || typeof b !== 'number') {
-        throw new TypeError('Both arguments must be numbers');
-    }
-    if (Number.isNaN(a) || Number.isNaN(b)) {
-        throw new Error('Arguments cannot be NaN');
+    if (typeof a !== 'number' || typeof b !== 'number' || Number.isNaN(a) || Number.isNaN(b)) {
+        throw new TypeError('Both arguments must be valid numbers');
     }
     return a + b;
 }
