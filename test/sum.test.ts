@@ -47,4 +47,13 @@ describe('sum', () => {
         expect(sum(largeNum, 0)).toBe(largeNum);
         expect(sum(largeNum, 1)).toBe(largeNum);
     });
+
+    test('adds two infinities of same sign', () => {
+        expect(sum(Infinity, Infinity)).toBe(Infinity);
+        expect(sum(-Infinity, -Infinity)).toBe(-Infinity);
+    });
+
+    test('adds very large negative numbers', () => {
+        expect(sum(-1000000, -2000000)).toBe(-3000000);
+    });
 });
