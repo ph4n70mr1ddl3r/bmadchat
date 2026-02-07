@@ -38,7 +38,16 @@ describe('sum', () => {
     });
 
     test('handles MAX_SAFE_INTEGER', () => {
-        expect(sum(Number.MAX_SAFE_INTEGER, 1)).toBe(Number.MAX_SAFE_INTEGER + 1);
         expect(sum(Number.MAX_SAFE_INTEGER, 0)).toBe(Number.MAX_SAFE_INTEGER);
+        expect(sum(Number.MAX_SAFE_INTEGER, -1)).toBe(Number.MAX_SAFE_INTEGER - 1);
+    });
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    test('throws TypeError for non-number arguments', () => {
+        expect(() => sum('1' as any, 2)).toThrow(TypeError); // eslint-disable-line @typescript-eslint/no-explicit-any
+        expect(() => sum(1, '2' as any)).toThrow(TypeError); // eslint-disable-line @typescript-eslint/no-explicit-any
+        expect(() => sum(null as any, 2)).toThrow(TypeError); // eslint-disable-line @typescript-eslint/no-explicit-any
+        expect(() => sum(undefined as any, 2)).toThrow(TypeError); // eslint-disable-line @typescript-eslint/no-explicit-any
+        expect(() => sum({} as any, 2)).toThrow(TypeError); // eslint-disable-line @typescript-eslint/no-explicit-any
     });
 });
