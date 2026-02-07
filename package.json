@@ -1,8 +1,15 @@
 {
     "name": "bmaderp",
     "version": "0.0.0",
+    "description": "A TypeScript library providing a simple sum function for adding two numbers together",
     "type": "module",
     "private": true,
+    "author": "",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ph4n70mr1ddl3r/bmaderp.git"
+    },
     "engines": {
         "node": ">=18.0.0"
     },
