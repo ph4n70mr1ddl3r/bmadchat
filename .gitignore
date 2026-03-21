@@ -7,6 +7,13 @@ __pycache__/
 node_modules/
 npm-debug.log*
 
+# Build output
+dist/
+
+# Test output
+coverage/
+junit.xml
+
 # Visual Studio Code
 .vscode/
 

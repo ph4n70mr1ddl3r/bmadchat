@@ -7,7 +7,6 @@
         "build": "tsc -p tsconfig.json",
         "lint": "eslint --ext .ts,.js src test --max-warnings=0",
         "test": "jest --coverage --reporters=default --reporters=jest-junit",
-        "test:node": "node test/test.js",
         "prepare": "npm run build"
     },
     "devDependencies": {
