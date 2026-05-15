@@ -7,8 +7,20 @@ __pycache__/
 node_modules/
 npm-debug.log*
 
-# Visual Studio Code
-.vscode/
+# Build output
+dist/
 
-# Mac
+# Test / coverage
+coverage/
+junit.xml
+
+# IDE
+.vscode/
+.idea/
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Package archives
+*.tgz
