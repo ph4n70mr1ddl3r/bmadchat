@@ -25,7 +25,7 @@ CI
 - Replace the job steps with real build/test/lint steps for your stack.
 
 Local checks
-- Add unit tests and a `make test` or equivalent command to integrate with CI.
+- Add unit tests and run `npm test` to verify before pushing.
 
 Next steps
 - Tell me your project's language and test command and I will update the CI to run real checks.

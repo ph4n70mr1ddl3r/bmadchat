@@ -9,3 +9,11 @@ updates:
       prefix: "chore(deps)"
     labels:
       - "dependencies"
+    versioning-strategy: increase-if-necessary
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "github-actions"
