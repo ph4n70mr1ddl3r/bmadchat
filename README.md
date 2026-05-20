@@ -1,49 +1,27 @@
-# bmaderp
+# bmadchat
 
-Repository scaffolded with minimal workflow files.
+![Node CI](https://github.com/ph4n70mr1ddl3r/bmadchat/actions/workflows/node-ci.yml/badge.svg)
 
-Getting started
-
-Configure CI
-
-Run tests locally
-
-Example
-```bash
-npm test
-```
-# bmaderp
-
-![Node CI](https://github.com/ph4n70mr1ddl3r/bmaderp/actions/workflows/node-ci.yml/badge.svg)
-
-A small scaffold for the `bmaderp` project that includes basic contributor
+A small scaffold for the `bmadchat` project that includes basic contributor
 guidance and a Node CI workflow. Use this as a starting point — replace and
 extend files to match your project's language and requirements.
 
-**Quickstart**
+## Quickstart
+
 - **Clone:** `git clone <repo-url>`
-- **Open:** `cd /home/riddler/bmaderp`
+- **Install:** `npm install`
+- **Build:** `npm run build`
+- **Test:** `npm test`
+- **Lint:** `npm run lint`
 
-**Run tests (local)**
-- Install Node.js (recommended LTS).
-- Run the test script: `npm test`
+## What's included
 
-**What’s included**
 - `WORKFLOW.md`: branching, PR process and contribution notes.
-- `.github/workflows/node-ci.yml`: Node CI workflow (installs deps, runs `npm test`).
-- `.github/workflows/ci.yml`: placeholder CI (editable).
+- `.github/workflows/node-ci.yml`: Node CI workflow (installs deps, lints, builds, runs tests).
 - `.github/ISSUE_TEMPLATE/*`: issue templates for bugs and feature requests.
 - `.github/PULL_REQUEST_TEMPLATE.md`: PR template.
 
-**Node CI behavior**
-- By default (push / PR) the Node CI workflow requires a `package.json` and
-	will fail if it is missing.
-- You can run the workflow manually via GitHub Actions `workflow_dispatch` and
-	set the `node_ci_required` input to `false` to make Node checks optional.
+## Contributing
 
-**Contributing**
 - Read `WORKFLOW.md` for branching and PR guidance.
 - Use the issue and PR templates when filing new work.
-
-If you'd like, I can expand this README with a project-specific setup (DB,
-build steps, environment variables) — tell me what stack you're using.

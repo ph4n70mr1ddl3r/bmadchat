@@ -1,14 +1,18 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Node
+# Dependencies
 node_modules/
+
+# Build output
+dist/
+
+# Test / coverage
+coverage/
+junit.xml
+
+# Logs
 npm-debug.log*
 
-# Visual Studio Code
-.vscode/
-
-# Mac
+# OS
 .DS_Store
+
+# IDE
+.vscode/
